@@ -26,11 +26,30 @@ var nav='';
 groups.forEach(function(g){
 nav+='<div class="nav-group"><div class="nav-label">'+g.label+'</div>';
 g.tools.forEach(function(t){
-nav+='<a class="nav-item'+(t.id===current?' active':'')+'" href="'+t.path+'"><span>'+t.name+'</span></a>';
+nav+='<a class="nav-item'+(t.id===current?' active':'')+'" href="'+t.path+'" data-name="'+t.name+'"><span>'+t.name+'</span></a>';
 });
 nav+='</div>';
 });
-side.innerHTML='<div class="brand"><a class="brand-logo" href="https://waterfish.ren" aria-label="水鱼之家"><img src="/favicon.ico" alt="水鱼之家"></a><a class="brand-name" href="https://waterfish.ren">水鱼之家</a><span class="brand-sep">/</span><a class="brand-page" href="/">工具</a></div><nav class="nav">'+nav+'</nav><div class="side-foot"><a href="https://waterfish.ren">返回水鱼之家</a><span class="side-note">所有处理均在浏览器本地完成，文件不会上传。</span></div>';
+side.innerHTML='<div class="brand"><a class="brand-logo" href="https://waterfish.ren" aria-label="水鱼之家"><img src="/favicon.ico" alt="水鱼之家"></a><a class="brand-name" href="https://waterfish.ren">水鱼之家</a><span class="brand-sep">/</span><a class="brand-page" href="/">工具</a></div><div class="search"><input id="toolSearch" type="search" placeholder="搜索工具" autocomplete="off"></div><nav class="nav">'+nav+'</nav><div class="nav-empty" id="navEmpty" hidden>未找到相关工具</div>';
+var search=document.getElementById('toolSearch');
+var empty=document.getElementById('navEmpty');
+if(search){
+search.addEventListener('input',function(){
+var q=this.value.trim().toLowerCase();
+var any=false;
+$$('.nav-group').forEach(function(group){
+var visible=0;
+$$('.nav-item',group).forEach(function(item){
+var hit=!q||(item.getAttribute('data-name')||'').toLowerCase().indexOf(q)>-1;
+item.style.display=hit?'':'none';
+if(hit)visible++;
+});
+group.style.display=visible?'':'none';
+if(visible)any=true;
+});
+if(empty)empty.hidden=any;
+});
+}
 }
 var toastEl=document.getElementById('toast');
 var toastTimer=null;
