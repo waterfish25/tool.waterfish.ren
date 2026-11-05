@@ -26,7 +26,7 @@ var nav='';
 groups.forEach(function(g){
 nav+='<div class="nav-group"><div class="nav-label">'+g.label+'</div>';
 g.tools.forEach(function(t){
-nav+='<a class="nav-item'+(t.id===current?' active':'')+'" href="'+t.path+'"><span class="tile">'+t.tag+'</span><span>'+t.name+'</span></a>';
+nav+='<a class="nav-item'+(t.id===current?' active':'')+'" href="'+t.path+'"><span>'+t.name+'</span></a>';
 });
 nav+='</div>';
 });
