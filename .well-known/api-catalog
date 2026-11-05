@@ -1,0 +1,25 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://tool.waterfish.ren/api/tools",
+      "service-desc": [
+        {
+          "href": "https://tool.waterfish.ren/api/openapi.json",
+          "type": "application/vnd.oai.openapi+json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://tool.waterfish.ren/api/docs",
+          "type": "text/html"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://tool.waterfish.ren/api/health",
+          "type": "application/json"
+        }
+      ]
+    }
+  ]
+}

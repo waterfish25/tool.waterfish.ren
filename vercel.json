@@ -1,1 +1,77 @@
-{"cleanUrls":true}
+{
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [{ "type": "header", "key": "accept", "value": "(.*)text/markdown(.*)" }],
+      "destination": "/md/index.md"
+    },
+    {
+      "source": "/Image/:path*",
+      "has": [{ "type": "header", "key": "accept", "value": "(.*)text/markdown(.*)" }],
+      "destination": "/md/Image/:path*.md"
+    },
+    {
+      "source": "/JSON/:path*",
+      "has": [{ "type": "header", "key": "accept", "value": "(.*)text/markdown(.*)" }],
+      "destination": "/md/JSON/:path*.md"
+    },
+    {
+      "source": "/Dev/:path*",
+      "has": [{ "type": "header", "key": "accept", "value": "(.*)text/markdown(.*)" }],
+      "destination": "/md/Dev/:path*.md"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/",
+      "has": [{ "type": "header", "key": "accept", "value": "(.*)text/markdown(.*)" }],
+      "headers": [{ "key": "Content-Type", "value": "text/markdown; charset=utf-8" }]
+    },
+    {
+      "source": "/",
+      "headers": [
+        { "key": "Vary", "value": "Accept" },
+        { "key": "Link", "value": "</.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", </api/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", </api/docs>; rel=\"service-doc\"; type=\"text/html\", </sitemap.xml>; rel=\"describedby\"; type=\"application/xml\"" }
+      ]
+    },
+    {
+      "source": "/Image/:path*",
+      "has": [{ "type": "header", "key": "accept", "value": "(.*)text/markdown(.*)" }],
+      "headers": [{ "key": "Content-Type", "value": "text/markdown; charset=utf-8" }]
+    },
+    {
+      "source": "/Image/:path*",
+      "headers": [{ "key": "Vary", "value": "Accept" }]
+    },
+    {
+      "source": "/JSON/:path*",
+      "has": [{ "type": "header", "key": "accept", "value": "(.*)text/markdown(.*)" }],
+      "headers": [{ "key": "Content-Type", "value": "text/markdown; charset=utf-8" }]
+    },
+    {
+      "source": "/JSON/:path*",
+      "headers": [{ "key": "Vary", "value": "Accept" }]
+    },
+    {
+      "source": "/Dev/:path*",
+      "has": [{ "type": "header", "key": "accept", "value": "(.*)text/markdown(.*)" }],
+      "headers": [{ "key": "Content-Type", "value": "text/markdown; charset=utf-8" }]
+    },
+    {
+      "source": "/Dev/:path*",
+      "headers": [{ "key": "Vary", "value": "Accept" }]
+    },
+    {
+      "source": "/.well-known/api-catalog",
+      "headers": [
+        { "key": "Content-Type", "value": "application/linkset+json" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    },
+    {
+      "source": "/api/openapi.json",
+      "headers": [{ "key": "Content-Type", "value": "application/vnd.oai.openapi+json; charset=utf-8" }]
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "水鱼之家工具目录 API",
+    "version": "1.0.0",
+    "description": "返回水鱼之家工具站的全部工具信息。",
+    "contact": {
+      "url": "https://waterfish.ren"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://tool.waterfish.ren"
+    }
+  ],
+  "paths": {
+    "/api/tools": {
+      "get": {
+        "operationId": "listTools",
+        "summary": "获取工具列表",
+        "responses": {
+          "200": {
+            "description": "工具列表",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "tools": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Tool"
+                      }
+                    }
+                  },
+                  "required": ["tools"]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/health": {
+      "get": {
+        "operationId": "health",
+        "summary": "健康检查",
+        "responses": {
+          "200": {
+            "description": "服务正常",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["status"]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Tool": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": ["name", "description", "url"]
+      }
+    }
+  }
+}
