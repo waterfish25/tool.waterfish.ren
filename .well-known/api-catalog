@@ -4,13 +4,13 @@
       "anchor": "https://tool.waterfish.ren/api/tools",
       "service-desc": [
         {
-          "href": "https://tool.waterfish.ren/api/openapi.json",
+          "href": "https://tool.waterfish.ren/openapi.json",
           "type": "application/vnd.oai.openapi+json"
         }
       ],
       "service-doc": [
         {
-          "href": "https://tool.waterfish.ren/api/docs",
+          "href": "https://tool.waterfish.ren/api-docs",
           "type": "text/html"
         }
       ],
