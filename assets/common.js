@@ -7,7 +7,9 @@ var groups=[
 {id:'image.convert',name:'图片格式转换',path:'/Image/ImageConvert',tag:'IMG'},
 {id:'image.compress',name:'图片压缩',path:'/Image/ImageCompress',tag:'ZIP'},
 {id:'image.resize',name:'图片尺寸调整',path:'/Image/ImageResize',tag:'SIZE'},
-{id:'image.base64',name:'图片 Base64',path:'/Image/ImageBase64',tag:'B64'}
+{id:'image.base64',name:'图片 Base64',path:'/Image/ImageBase64',tag:'B64'},
+{id:'image.rotate',name:'图片旋转翻转',path:'/Image/ImageRotate',tag:'ROT'},
+{id:'image.watermark',name:'图片水印',path:'/Image/ImageWatermark',tag:'MARK'}
 ]},
 {label:'JSON 工具',tools:[
 {id:'json.format',name:'JSON 格式化',path:'/JSON/JSONFormat',tag:'JSON'}
@@ -16,7 +18,11 @@ var groups=[
 {id:'dev.time',name:'时间戳转换',path:'/Dev/TimeConvert',tag:'TIME'},
 {id:'dev.color',name:'颜色转换',path:'/Dev/ColorConvert',tag:'RGB'},
 {id:'dev.password',name:'密码生成',path:'/Dev/PasswordGenerator',tag:'KEY'},
-{id:'dev.url',name:'URL 编解码',path:'/Dev/UrlCodec',tag:'URL'}
+{id:'dev.url',name:'URL 编解码',path:'/Dev/UrlCodec',tag:'URL'},
+{id:'dev.textbase64',name:'Base64 编解码',path:'/Dev/TextBase64',tag:'B64'},
+{id:'dev.hash',name:'哈希计算',path:'/Dev/HashGenerator',tag:'HASH'},
+{id:'dev.uuid',name:'UUID 生成',path:'/Dev/UuidGenerator',tag:'UUID'},
+{id:'dev.textcount',name:'文本统计',path:'/Dev/TextCounter',tag:'TEXT'}
 ]}
 ];
 var current=document.body.getAttribute('data-tool')||'';

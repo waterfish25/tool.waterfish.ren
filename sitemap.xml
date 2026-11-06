@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://tool.waterfish.ren/</loc><lastmod>2026-11-05</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-<url><loc>https://tool.waterfish.ren/Image/ImageConvert</loc><lastmod>2026-11-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-<url><loc>https://tool.waterfish.ren/Image/ImageCompress</loc><lastmod>2026-11-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-<url><loc>https://tool.waterfish.ren/Image/ImageResize</loc><lastmod>2026-11-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-<url><loc>https://tool.waterfish.ren/Image/ImageBase64</loc><lastmod>2026-11-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-<url><loc>https://tool.waterfish.ren/JSON/JSONFormat</loc><lastmod>2026-11-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-<url><loc>https://tool.waterfish.ren/Dev/TimeConvert</loc><lastmod>2026-11-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-<url><loc>https://tool.waterfish.ren/Dev/ColorConvert</loc><lastmod>2026-11-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-<url><loc>https://tool.waterfish.ren/Dev/PasswordGenerator</loc><lastmod>2026-11-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-<url><loc>https://tool.waterfish.ren/Dev/UrlCodec</loc><lastmod>2026-11-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://tool.waterfish.ren/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+<url><loc>https://tool.waterfish.ren/Dev/ColorConvert</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>https://tool.waterfish.ren/Dev/HashGenerator</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>https://tool.waterfish.ren/Dev/PasswordGenerator</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>https://tool.waterfish.ren/Dev/TextBase64</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>https://tool.waterfish.ren/Dev/TextCounter</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>https://tool.waterfish.ren/Dev/TimeConvert</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>https://tool.waterfish.ren/Dev/UrlCodec</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>https://tool.waterfish.ren/Dev/UuidGenerator</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>https://tool.waterfish.ren/Image/ImageBase64</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>https://tool.waterfish.ren/Image/ImageCompress</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>https://tool.waterfish.ren/Image/ImageConvert</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>https://tool.waterfish.ren/Image/ImageResize</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>https://tool.waterfish.ren/Image/ImageRotate</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>https://tool.waterfish.ren/Image/ImageWatermark</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>https://tool.waterfish.ren/JSON/JSONFormat</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
 </urlset>

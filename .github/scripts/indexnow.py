@@ -1,25 +1,39 @@
 import json
 import subprocess
 import urllib.request
+from pathlib import Path
 
 HOST = "tool.waterfish.ren"
 KEY = "f491f480bf6b43cdbe9dd6b5435b5f1f"
 BASE = f"https://{HOST}"
 KEY_LOCATION = f"{BASE}/{KEY}.txt"
 ENDPOINT = "https://www.bing.com/indexnow"
+ROOT = Path(__file__).resolve().parents[2]
+SKIP = {
+    "node_modules",
+    ".git",
+    ".github",
+    ".vercel",
+    ".uploads",
+    ".well-known",
+    "assets",
+    "api",
+    "md",
+    "scripts",
+}
 
-ALL_URLS = [
-    f"{BASE}/",
-    f"{BASE}/Image/ImageConvert",
-    f"{BASE}/Image/ImageCompress",
-    f"{BASE}/Image/ImageResize",
-    f"{BASE}/Image/ImageBase64",
-    f"{BASE}/JSON/JSONFormat",
-    f"{BASE}/Dev/TimeConvert",
-    f"{BASE}/Dev/ColorConvert",
-    f"{BASE}/Dev/PasswordGenerator",
-    f"{BASE}/Dev/UrlCodec",
-]
+
+def all_urls():
+    pages = []
+    for path in ROOT.rglob("*.html"):
+        parts = path.relative_to(ROOT).parts
+        if parts[0] in SKIP:
+            continue
+        if len(parts) == 1 and parts[0] == "api-docs.html":
+            continue
+        clean = "/".join(parts)[:-5]
+        pages.append(f"{BASE}/" if clean == "index" else f"{BASE}/{clean}")
+    return sorted(pages)
 
 
 def changed_files():
@@ -46,7 +60,7 @@ def main():
         print("No changes in the last 24 hours")
         return
     if any(path.startswith("assets/") or path == "vercel.json" for path in files):
-        urls = ALL_URLS
+        urls = all_urls()
     else:
         urls = sorted({url for url in (page_url(path) for path in files) if url})
     if not urls:
